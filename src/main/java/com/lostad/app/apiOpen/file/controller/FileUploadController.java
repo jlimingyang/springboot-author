@@ -1,10 +1,9 @@
 package com.lostad.app.apiOpen.file.controller;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
@@ -18,14 +17,15 @@ import org.springframework.web.multipart.MultipartFile;
 import com.lostad.app.apiOpen.file.entity.HisFileData;
 import com.lostad.app.apiOpen.file.entity.HisFileReport;
 import com.lostad.app.apiOpen.file.service.FileUploadService;
+import com.lostad.app.apiOpen.file.vo.UploadFileVO;
+import com.lostad.app.common.util.BeanUtil;
 import com.lostad.app.common.util.FileGenerater;
 import com.lostad.app.common.util.ResponseUtil;
-import com.lostad.app.common.util.Validator;
 import com.lostad.app.common.vo.JsonRe;
-import com.lostad.app.conf.Const;
 /**
  * 
  */
+@Api(tags={"fileUpload"})
 @Controller
 @RequestMapping(value = "/apiOPen/fileUpload")
 public class FileUploadController {
@@ -36,92 +36,67 @@ public class FileUploadController {
     private FileUploadService fileUploadService;
 	/**
 	 * 上传数据文件
-	 * @param 
+	 * @param  typeCode 文件类型编码lb
+	 * @param  deviceNo 设备编号
+	 * @param  patientId 病人ID
+	 * @param  doctorId  医生ID
 	 * @return void
 	 */
+    @ApiOperation(value = "上传数据文件", notes = "硬件设备采集的数据文件", response = JsonRe.class)
 	@RequestMapping(value = "/data" ,method = RequestMethod.POST)
-	///public void fileUpload(@RequestParam("file1") MultipartFile[] files,@RequestParam String patientId,HttpServletResponse response) {  
-	public void fileUpload(@RequestParam("file1") MultipartFile file1,
-			               HttpServletRequest request,
-			               HttpServletResponse response,
-			               @RequestParam String typeCode,
-			               @RequestParam(required=false) String patientId,
-			               @RequestParam(required=false) String doctorId) {  
-		int success = 0;
-		String msg = "上传成功！";
-        
-		Map<String, Object> obj = null;
-         if (!file1.isEmpty()) {
-            try {
-            	String path = fileGenerater.getPathUpload(Const.PATH_DATA);
-            	File dir = new File(path);
-        		if (!dir.exists() && !dir.isDirectory()) {
-        			dir.mkdir();// 文件不存在，创建文件
-        		}
-               // 转存文件  
-				if (Validator.isNotEmpty(patientId)) {
-					try {
-						HisFileData data = fileUploadService.saveDataInfo(patientId,doctorId,file1,typeCode);
-						obj = new HashMap<String, Object>();
-						obj.put("id",data.getId());
-						obj.put("fileName", file1.getOriginalFilename());
-					} catch (Exception e) {
-						e.getMessage();
-						logger.error("文件上传失败" + e.getMessage());
-						success = 1;
-						msg = "文件上传失败" + e.getMessage();
-					}
-			    }else{
-			    	success = 1;
-					msg = "未设置病人ID" ;
-			    }
-           } catch (Exception e) {  
-              e.printStackTrace();  
-           }  
-        }  
- 		ResponseUtil.flushJson(response,  new JsonRe(success, msg, obj));
+	public void fileUpload(
+			@RequestParam("file1") MultipartFile file1,
+			@RequestParam String typeCode,
+			@RequestParam(required=false) String deviceNo,
+			@RequestParam(required=false) String patientId,
+			@RequestParam(required=false) String doctorId,
+			 HttpServletResponse response) {  
+		 int success = 0;
+		 String msg = "上传成功！";
+		 UploadFileVO data = null;
+	      try {
+	    	    HisFileData r = fileUploadService.saveDataInfo(patientId,doctorId,file1,typeCode);
+	        	BeanUtil.copyProperties(data, r,true,true);
+	       } catch (Exception e) {  
+	            e.printStackTrace();  
+				logger.error("文件上传失败" + e.getMessage());
+				success = 1;
+				msg = "文件上传失败" + e.getMessage();
+	       }  
+ 		ResponseUtil.flushJson(response,  new JsonRe<>(success, msg, data));
 	} 
 	
 	/**
 	 * 报告文件上传
-	 * @param 
+	 * @param  typeCode 文件类型编码lb
+	 * @param  dataId    数据文件
+	 * @param  patientId 病人ID
+	 * @param  doctorId  医生ID
 	 * @return void
 	 */
-	@RequestMapping(value = "/reportUp" ,method = RequestMethod.POST)
-	public void reportUp(@RequestParam("file1") MultipartFile file,
-			               @RequestParam Integer dataId,
-			               @RequestParam String typeCode,
-			               @RequestParam(required=false) String patientId,
-			               @RequestParam(required=false) String doctorId,
-			               HttpServletRequest request,
+	@ApiOperation(value = "上传报告", notes = "上传专家生成的报告文件", response = JsonRe.class)
+	@RequestMapping(value = "/report" ,method = RequestMethod.POST)
+	public void reportUp(
+						@RequestParam("file1") MultipartFile file1,
+						@RequestParam String typeCode,
+						@RequestParam(required=false) Integer dataId,
+						@RequestParam(required=false) String patientId,
+						@RequestParam(required=false) String doctorId,
 			               HttpServletResponse response) {  
 		int success = 0;
 		String msg = "上传成功！";
-		Map<String, Object> obj = null;
-         if (!file.isEmpty()) {  
-            try {  
-               // 转存文件  
-				if (Validator.isNotEmpty(patientId)) {
-					try {
-						HisFileReport data = fileUploadService.saveReportInfo(patientId,doctorId,dataId,file,typeCode);
-						obj = new HashMap<String, Object>();
-						obj.put("id",data.getId());
-						obj.put("fileName", file.getOriginalFilename());
-					} catch (Exception e) {
-						e.getMessage();
-						logger.error("文件上传失败" + e.getMessage());
-						success = 1;
-						msg = "文件上传失败" + e.getMessage();
-					}
-			    }else{
-			    	success = 1;
-					msg = "未设置病人ID" ;
-			    }
-           } catch (Exception e) {  
-              e.printStackTrace();  
-           }  
-        }  
- 		ResponseUtil.flushJson(response,new JsonRe(success, msg, obj));
+		UploadFileVO data = null;
+        try {  
+           // 转存文件  
+        	HisFileReport r = fileUploadService.saveReportInfo(patientId,doctorId,dataId,file1,typeCode);
+        	BeanUtil.copyProperties(data, r,true,true);
+       } catch (Exception e) {  
+    	    e.printStackTrace();  
+			logger.error("文件上传失败" + e.getMessage());
+			success = 1;
+			msg = "文件上传失败" + e.getMessage();
+       }  
+ 		ResponseUtil.flushJson(response,new JsonRe<UploadFileVO>(success, msg, data));
 	} 
 	
 //	@RequestMapping(value = "/fileUp.do" ,method = RequestMethod.POST)
