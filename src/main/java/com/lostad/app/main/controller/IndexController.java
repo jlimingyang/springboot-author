@@ -48,17 +48,7 @@ public class IndexController {
 	@GetMapping(value={"","/preLogin"})
     public String preLogin(HttpServletRequest request){
         request.setAttribute("mode", "MODE_main");
-        User u = cacheService.findUser("1");
        
-        System.out.println("------------------"+u.getUsername());
-       
-    	Area a = new Area();
-		a.setCode("test");
-		a.setCreateBy("test");
-		
-		commonService.save(a);
-		System.out.println("=======================a:"+a.getId());
-		
         return "/login";
     }
 	
@@ -121,7 +111,7 @@ public class IndexController {
 		return "redirect:"+request.getParameter("url");
 	}
 	
-	@GetMapping("/error1")
+	@GetMapping(value="/error")
     public String error1(HttpServletRequest request){
         request.setAttribute("msg", "something wrong!!");
         return "/common/error";
