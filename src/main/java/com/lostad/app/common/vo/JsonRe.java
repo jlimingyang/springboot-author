@@ -1,62 +1,31 @@
 package com.lostad.app.common.vo;
 
-import java.util.List;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * $.ajax后需要接受的JSON 一体机接口返回值
  * 
  * @author sszvip
+ * @param <T>
  * 
  */
-public class JsonRe {
+public class JsonRe<T> {
+	@ApiModelProperty(value="错误码0:正常，1：异常",required=true)   
 	private int error = 0;// 是(0),否(1),没有结果集(2) ,凭证不正常（-1）
+	@ApiModelProperty(value="提示信息",required=true)   
 	private String msg = "操作成功";// 提示信息
-	private Object obj = null;// 其他信息
-    private boolean gzip = false; //是否使用压缩模式
+	
+	@ApiModelProperty(value="业务数据:可能是对象或数组或null",required=false)   
+	private T obj = null;// 其他信息
+	
 	public JsonRe() {
 	}
 
-	public JsonRe(int error, String msg, Object obj) {
-		this.error = error;
-		this.msg = msg;
-		this.obj = obj;
-//    未查询到数据，返回空的list,非异常情况，
-//		if (obj instanceof List) {
-//			if (((List) obj).size() <= 0) {
-//				this.success = 2;
-//				this.msg = "未查询到结果集";
-//			}
-//		}
-	}
-	public JsonRe(int error, String msg, Object obj,boolean isGzip) {
-		this.error = error;
-		this.msg = msg;
-		this.obj = obj;
-		this.gzip = isGzip;
-//    未查询到数据，返回空的list,非异常情况，
-//		if (obj instanceof List) {
-//			if (((List) obj).size() <= 0) {
-//				this.success = 2;
-//				this.msg = "未查询到结果集";
-//			}
-//		}
-	}
-	public JsonRe(int error, String msg, Object obj,String token) {
+	public JsonRe(int error, String msg, T obj) {
 		this.error = error;
 		this.msg = msg;
 		this.obj = obj;
 	}
-	
-
-	
-	public boolean isGzip() {
-		return gzip;
-	}
-
-	public void setGzip(boolean gzip) {
-		this.gzip = gzip;
-	}
-
 
 	/**
 	 * @return the error
@@ -80,11 +49,11 @@ public class JsonRe {
 		this.msg = msg;
 	}
 
-	public Object getObj() {
+	public T getObj() {
 		return obj;
 	}
 
-	public void setObj(Object obj) {
+	public void setObj(T obj) {
 		this.obj = obj;
 	}
 
