@@ -89,14 +89,14 @@ public class FileUploadController {
 	 */
 	@RequestMapping(value = "/reportUp" ,method = RequestMethod.POST)
 	public void reportUp(@RequestParam("file1") MultipartFile file,
-			               @RequestParam String patientId,
 			               @RequestParam Integer dataId,
 			               @RequestParam String typeCode,
+			               @RequestParam(required=false) String patientId,
+			               @RequestParam(required=false) String doctorId,
 			               HttpServletRequest request,
 			               HttpServletResponse response) {  
 		int success = 0;
 		String msg = "上传成功！";
-		String doctorId = request.getParameter("doctorId");//可能为空
 		Map<String, Object> obj = null;
          if (!file.isEmpty()) {  
             try {  
