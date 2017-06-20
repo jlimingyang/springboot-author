@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.lostad.app</groupId>
-	<artifactId>app-jsp</artifactId>
+	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>app-jsp</name>
+	<name>app</name>
 	<description>jsp in jar demo</description>
 	<properties>
 		<start-class>com.lostad.app.WebApplication</start-class>
