@@ -16,11 +16,10 @@ if (Servlets.isAjaxRequest(request)) {
 //输出异常信息页面
 else {
 %>
-<%@page import="com.jeeplus.common.web.Servlets"%>
 <%@page import="com.jeeplus.common.utils.Exceptions"%>
 <%@page import="com.jeeplus.common.utils.StringUtils"%>
 <%@page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
-<%@include file="/webpage/include/taglib.jsp"%>
+<%@include file="/include/taglib.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
