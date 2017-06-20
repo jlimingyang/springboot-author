@@ -21,9 +21,14 @@ import com.lostad.app.common.util.ResponseUtil;
 import com.lostad.app.common.vo.JsonRe;
 import com.lostad.app.security.util.SignUtil;
 
-
+/**
+ * 拦截所有非anno的请求
+ * 
+ * @author songsz
+ *
+ */
 @Component
-public class RequestIntercepter implements HandlerInterceptor {
+public class ApiRequestIntercepter implements HandlerInterceptor {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private CacheService cacheService;
@@ -54,7 +59,7 @@ public class RequestIntercepter implements HandlerInterceptor {
 					if(p==null){
 						throw new ApiException("appId："+appId +"未注册！");
 					}else{
-						signSuccess = SignUtil.verifySignMD5(data4Sign,appId,p.getSecretKey(),sign);
+						signSuccess = SignUtil.verifySignMD5(data4Sign,p.getSecretKey(),sign);
 					}
 				}else{
 					throw new ApiException("签名方式未设置!");
@@ -69,9 +74,12 @@ public class RequestIntercepter implements HandlerInterceptor {
 				ResponseUtil.flushJson(response, re);
 			}
 			return signSuccess;
-		}else {
-			request.getRequestDispatcher("/login").forward(request, response);
+		}else if(requestPath.startsWith("api/")){//未实现
+			request.getRequestDispatcher("/preLogin").forward(request, response);
 			return false;
+		}else {
+			
+			return true;
 		}
 	}
 
@@ -79,7 +87,11 @@ public class RequestIntercepter implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-			request.setAttribute("ctx", request.getContextPath());
+		    String ctx =  request.getContextPath();
+		    if(logger.isDebugEnabled()){
+		    	logger.debug("===========ctx:"+ctx);
+		    }
+			request.setAttribute("ctx",ctx);
 	}
 
 	
