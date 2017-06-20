@@ -44,8 +44,8 @@ public class FileUploadController {
 	public void fileUpload(@RequestParam("file1") MultipartFile file1,
 			               HttpServletRequest request,
 			               HttpServletResponse response,
-			               @RequestParam String patientId,
 			               @RequestParam String typeCode,
+			               @RequestParam(required=false) String patientId,
 			               @RequestParam(required=false) String doctorId) {  
 		int success = 0;
 		String msg = "上传成功！";
