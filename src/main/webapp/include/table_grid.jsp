@@ -1,0 +1,29 @@
+<%@ page pageEncoding="UTF-8"%>
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/animate.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <!-- 全局js -->
+    <script src="${pageContext.request.contextPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="${pageContext.request.contextPath}/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/plugins/layer/layer.min.js"></script>
+    <!-- 自定义js -->
+    <script src="${pageContext.request.contextPath}/static/js/hplus.js?v=4.1.0"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/contabs.js"></script>
+    <!-- 第三方插件 -->
+    <!-- jbox -->
+	<link href="${pageContext.request.contextPath}/static/js/plugins/jquery-jbox/2.3/Skins/Bootstrap/jbox.min.css" rel="stylesheet" />
+	<script src="${pageContext.request.contextPath}/static/js/plugins/jquery-jbox/2.3/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+     <!-- 日期 -->
+    <script src="${pageContext.request.contextPath}/static/js/plugins/layer/laydate/laydate.js"></script>
+
+    <script src="${pageContext.request.contextPath}/static/js/plugins/pace/pace.min.js"></script>
+    <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+    <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>  
+    
+</body>
+
+</html>
