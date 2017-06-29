@@ -14,7 +14,7 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-    <%@include file="/include/jquery_bootstrap.jsp"%>
+    	<%@ include file="/include/header_bootstrap.jsp"%>
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">

@@ -3,7 +3,9 @@
 <html>
 <head>
 	<title>用户管理</title>
-	<meta name="decorator" content="default"/>
+	<<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
+	<%@include file="/include/header_table_grid.jsp" %>
 </head>
 <body>
 	<div class="wrapper wrapper-content">

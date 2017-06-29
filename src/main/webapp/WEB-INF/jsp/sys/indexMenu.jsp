@@ -6,9 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <%@include file="/include/jquery_bootstrap.jsp"%>
-	<%@include file="/include/treetable.jsp" %>
-	<%@include file="/include/js_common.jsp" %>
+    <%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
 	<title>菜单管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">

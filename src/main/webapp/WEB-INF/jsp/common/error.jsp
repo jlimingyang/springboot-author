@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title> 404 页面</title>
-    <%@include file="/include/jquery_bootstrap.jsp"%>
+   <%@ include file="/include/header_bootstrap.jsp"%>
 </head>
 
 <body class="gray-bg">

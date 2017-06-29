@@ -18,6 +18,14 @@
     <function-signature>com.lostad.app.system.entity.User getUser()</function-signature>
     <example>${fns:getUser()}</example>  
   </function>
+  <function>
+    <description>获取当前用户对象</description>
+    <name>isCurrUserAdmin</name>
+    <function-class>com.lostad.app.system.util.UserUtils</function-class>
+    <function-signature>com.lostad.app.system.entity.User isCurrUserAdmin()</function-signature>
+    <example>${fns:isCurrUserAdmin()}</example>  
+  </function>
+  
   
   <function>
     <description>根据编码获取用户对象</description>
