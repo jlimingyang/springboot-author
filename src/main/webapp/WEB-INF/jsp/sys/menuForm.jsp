@@ -44,8 +44,14 @@
 		   <tbody>
 		      <tr>
 		         <td  class="width-15 active"><label class="pull-right">上级菜单:</label></td>
-		         <td class="width-15" ><sys:treeselect id="menu" name="parent.id" value="${menu.parent.id}" labelName="parent.name" labelValue="${menu.parent.name}"
-					title="菜单" url="/sys/menu/treeData" extId="${menu.id}" cssClass="form-control required"/></td>
+		         <td class="width-35" >
+		         
+		         <sys:treeselect  id="menu" name="parent.id" value="${menu.parent.id}"
+		            labelName="parent.name" labelValue="${menu.parent.name}"
+					title="菜单" url="/sys/menu/treeData" extId="${menu.id}" 
+					cssClass="form-control required" />
+					
+					</td>
 		         <td  class="width-15 active"><label class="pull-right"><font color="red">*</font> 名称:</label></td>
 		         <td  class="width-35" ><form:input path="name" htmlEscape="false" maxlength="50" class="required form-control "/></td>
 		      </tr>
