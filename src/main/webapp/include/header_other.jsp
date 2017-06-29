@@ -1,5 +1,7 @@
 <%@ page pageEncoding="UTF-8"%>
 <!-- 引入依赖的第三方插件 -->
+<link href="${pageContext.request.contextPath}/static/common/css/style.css?v=1.0" rel="stylesheet">
+
 <script src="${pageContext.request.contextPath}/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/static/js/plugins/jquery-validation/1.14.0/jquery.validate.min.js" type="text/javascript"></script>
@@ -11,9 +13,6 @@
 <link href="${pageContext.request.contextPath}/static/js/plugins/iCheck/custom.css" rel="stylesheet" />
 <script src="${pageContext.request.contextPath}/static/js/plugins/iCheck/icheck.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/plugins/iCheck/icheck-init.js"></script>
-<link href="${pageContext.request.contextPath}/static/js/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-<script src="${pageContext.request.contextPath}/static/js/plugins/dataTables/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/static/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 <!-- jquery ui -->
 <script src="${pageContext.request.contextPath}/static/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 </body>

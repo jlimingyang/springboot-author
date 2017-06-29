@@ -5,7 +5,9 @@
     <link href="${pageContext.request.contextPath}/static/css/animate.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
     <!-- 全局js -->
-    <script src="${pageContext.request.contextPath}/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="${pageContext.request.contextPath}/static/js/jquery/jquery-2.1.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/jquery/jquery-migrate-1.1.1.min.js"></script>
+    
     <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
     <script src="${pageContext.request.contextPath}/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="${pageContext.request.contextPath}/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
