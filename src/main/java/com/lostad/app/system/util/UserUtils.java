@@ -15,6 +15,7 @@ import org.apache.shiro.subject.Subject;
 import com.lostad.app.common.util.SMSUtils;
 import com.lostad.app.common.util.SpringUtil;
 import com.lostad.app.system.dao.AreaDao;
+import com.lostad.app.system.dao.DictDao;
 import com.lostad.app.system.dao.OfficeDao;
 import com.lostad.app.system.dao.RoleDao;
 import com.lostad.app.system.dao.UserDao;
@@ -37,7 +38,7 @@ public class UserUtils {
 	private static ResourceService resService = SpringUtil.getBean(ResourceService.class);
 	private static AreaDao areaDao = SpringUtil.getBean(AreaDao.class);
 	private static OfficeDao officeDao = SpringUtil.getBean(OfficeDao.class);
-
+	
 	public static final String USER_CACHE = "userCache";
 	public static final String USER_CACHE_ID_ = "id_";
 	public static final String USER_CACHE_LOGIN_NAME_ = "ln";
@@ -286,8 +287,16 @@ public class UserUtils {
 		return areaDao.findByCode(code);
 	}
 
+	/**
+	 * 当前用户是否为超级管理员
+	 * @return
+	 */
 	public static boolean isCurrUserAdmin() {
-		return true;
+		User u = getCurrUser();
+		if(u.getRoleCodes().contains("SUPER_ADMIN")){
+			return true;
+		}
+		return false;
 	}
 	
 }

@@ -27,5 +27,7 @@ public interface IRoleService extends IBaseService<Role,String> {
 	 * @param resourceIds 资源ids
 	 */
 	void grant(String id, String[] resourceIds);
+
+	List<Role> findRoles(Role role);
 	
 }

@@ -1,6 +1,8 @@
 package com.lostad.app.system.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
@@ -9,7 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import com.lostad.app.common.dao.IBaseSpringDataDao;
+import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.service.impl.BaseServiceImpl;
+import com.lostad.app.common.util.HqlUtil;
 import com.lostad.app.system.dao.RoleDao;
 import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.entity.Role;
@@ -31,7 +35,8 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IR
 	private RoleDao roleDao;
 	@Autowired
 	private ResourceService resourceService;
-	
+	@Autowired
+	private CommonService commonService;
 
 	@Override
 	public void saveOrUpdate(Role role) {
@@ -81,6 +86,18 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IR
 	@Override
 	public IBaseSpringDataDao<Role, String> getBaseDao() {
 		return roleDao;
+	}
+
+
+
+	@Override
+	public List<Role> findRoles(Role param) {
+		 StringBuilder hql = new StringBuilder();
+		 hql.append(" from Role where delFlag=0 ");
+		 List<Object> params = new ArrayList<>();
+		 HqlUtil.genWhereCondition(hql, params, param);
+		 List<Role> list = commonService.findHql(hql.toString(), params.toArray());
+		return list;
 	}
 	
 }

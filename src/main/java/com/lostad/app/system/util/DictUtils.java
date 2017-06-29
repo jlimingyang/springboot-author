@@ -18,7 +18,7 @@ import com.lostad.app.system.dao.DictDao;
 import com.lostad.app.system.entity.Dict;
 
 /**
- * 字典工具类
+ * 字典工具类 (后期加缓存注解)
  * @author jeeplus
  * @version 2013-5-29
  */
@@ -63,7 +63,7 @@ public class DictUtils {
 	
 	public static List<Dict> getDictList(String type){
 		@SuppressWarnings("unchecked")
-		List<Dict> dictList = new ArrayList<>();
+		List<Dict> dictList = dictDao.findByType(type);
 		if (dictList == null){
 			dictList = Lists.newArrayList();
 		}

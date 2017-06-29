@@ -12,12 +12,15 @@ import org.springframework.util.Assert;
 import com.lostad.app.common.dao.IBaseSpringDataDao;
 import com.lostad.app.common.dao.JdbcDao;
 import com.lostad.app.common.dao.JpaDao;
+import com.lostad.app.common.service.CacheService;
+import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.service.impl.BaseServiceImpl;
 import com.lostad.app.system.dao.UserDao;
 import com.lostad.app.system.entity.Role;
 import com.lostad.app.system.entity.User;
+import com.lostad.app.system.entity.UserRole;
 import com.lostad.app.system.service.IRoleService;
-import com.lostad.app.system.service.IUserService;
+import com.lostad.app.system.service.UserService;
 import com.lostad.app.system.util.UserUtils;
 
 /**
@@ -30,7 +33,7 @@ import com.lostad.app.system.util.UserUtils;
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User, String> implements
-		IUserService {
+		UserService {
 
 	@Autowired
 	private UserDao userDao;
@@ -40,7 +43,10 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements
 	private JdbcDao jdbcDao;
 	@Autowired
 	private IRoleService roleService;
-
+	@Autowired
+	private CacheService cacheService;
+	@Autowired
+	private CommonService commonService;
 	@Override
 	public IBaseSpringDataDao<User, String> getBaseDao() {
 		return userDao;
@@ -123,5 +129,44 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements
 		}
 		
 		return s;
+	}
+	@Override
+	public List<User> findByRoleId(String roleId) {
+		String hql = " select ur.user from UserRole ur where ur.role.id=?";
+		return jpaDao.findHql(hql, roleId);
+	}
+	@Override
+	public List<User> findByDeptId(String deptId) {
+		String hql = "  from User u where u.deptId= ? ";
+		return jpaDao.findHql(hql, deptId);
+	}
+	@Override
+	public Boolean outUserInRole(String roleId, String userId) {
+		try{
+			User u = find(userId);
+			Role r = roleService.find(roleId);
+			u.getRoles().remove(r);
+			cacheService.saveUser(u);
+		}catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public int assignUserToRole(String roleId,String[] arrUserId) {
+		int num = 0;
+		Role r = roleService.find(roleId);
+		for(String userId:arrUserId){
+			try{
+				User u = cacheService.findUser(userId);
+				UserRole ur = new UserRole(u,r);
+				commonService.save(ur);
+				num++;
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		return num;
 	}
 }

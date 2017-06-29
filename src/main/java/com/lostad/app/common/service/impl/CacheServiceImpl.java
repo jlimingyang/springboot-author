@@ -59,7 +59,7 @@ public class CacheServiceImpl implements CacheService {
 		return p;
 	}
 	@org.springframework.cache.annotation.CacheEvict(value = "basicCache", key = "#user.id.concat('_user')")
-	public void updateUser(User user) {
+	public void saveUser(User user) {
 		userDao.saveAndFlush(user);
 	}
 	

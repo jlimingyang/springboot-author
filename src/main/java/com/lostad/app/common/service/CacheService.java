@@ -17,6 +17,6 @@ public interface CacheService {
 	public void updateRole(Role role);
 	public User findUser(String id);
 	public void delUser(User user);
-	public void updateUser(User user);
+	public void saveUser(User user);
 	public HisThirdParty getHisThirdParty(String appId);
 }

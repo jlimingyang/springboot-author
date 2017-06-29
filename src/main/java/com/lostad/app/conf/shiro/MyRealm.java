@@ -23,7 +23,7 @@ import com.lostad.app.security.util.MD5Utils;
 import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.entity.Role;
 import com.lostad.app.system.entity.User;
-import com.lostad.app.system.service.IUserService;
+import com.lostad.app.system.service.UserService;
 
 /**
  * 
@@ -42,7 +42,7 @@ public class MyRealm extends AuthorizingRealm {
 	}
 	
 	@Autowired
-	private IUserService userService;
+	private UserService userService;
 
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {

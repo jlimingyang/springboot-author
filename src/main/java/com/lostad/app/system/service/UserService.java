@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 import com.lostad.app.common.service.IBaseService;
+import com.lostad.app.system.entity.Role;
 import com.lostad.app.system.entity.User;
 
 /**
@@ -15,7 +16,7 @@ import com.lostad.app.system.entity.User;
  * @author SPPan
  * @since 2016-12-28
  */
-public interface IUserService extends IBaseService<User, String> {
+public interface UserService extends IBaseService<User, String> {
 
 	/**
 	 * 根据用户名查找用户
@@ -40,4 +41,12 @@ public interface IUserService extends IBaseService<User, String> {
 	Set<String>  findMyPermitions();
 
 	Set<String> findMyRoles();
+
+	List<User> findByRoleId(String id);
+
+	List<User> findByDeptId(String officeId);
+
+	Boolean outUserInRole(String roleId, String userId);
+
+	int assignUserToRole(String roleId, String[] idsArr);
 }

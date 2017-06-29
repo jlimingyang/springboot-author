@@ -33,7 +33,7 @@ public class User extends BaseEntity {
 	private Date loginDate;
 	private String loginIp;
 	private String roleCodes;//冗余设置'role1,role2,'
-	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JoinTable(name = "sys_user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
 	@JsonIgnore
 	private java.util.Set<Role> roles;

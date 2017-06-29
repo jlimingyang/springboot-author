@@ -37,14 +37,6 @@ public class MenuController extends BaseController {
 	@Autowired
 	private ResourceService resourceService;
 	
-	@ModelAttribute("menu")
-	public Menu get(@RequestParam(required=false) String id) {
-		if (StringUtils.isNotBlank(id)){
-			return resourceService.find(id);
-		}else{
-			return new Menu();
-		}
-	}
 
 	// @RequiresPermissions("sys:menu:list")
 	@RequestMapping(value = {"/indexMenu",""})
