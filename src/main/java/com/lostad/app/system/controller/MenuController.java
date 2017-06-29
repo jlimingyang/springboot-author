@@ -26,9 +26,9 @@ import com.lostad.app.system.service.ResourceService;
 import com.lostad.app.system.util.UserUtils;
 
 /**
- * 菜单Controller
- * @author jeeplus
- * @version 2013-3-23
+ * 资源管理
+ * @author sszvip
+ *  
  */
 @Controller
 @RequestMapping(value = "/sys/menu")
