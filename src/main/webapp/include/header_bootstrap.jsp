@@ -1,5 +1,4 @@
 <%@ page pageEncoding="UTF-8"%>
-    <link rel="shortcut icon" href="favicon.ico"> 
     <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/css/animate.css" rel="stylesheet">
