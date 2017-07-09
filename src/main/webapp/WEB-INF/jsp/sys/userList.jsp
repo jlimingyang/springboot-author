@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>用户管理</title>

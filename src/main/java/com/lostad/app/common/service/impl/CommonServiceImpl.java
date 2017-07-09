@@ -111,8 +111,7 @@ public class CommonServiceImpl<T>  implements CommonService {
 
 	@Override
 	public <T> void save(T entity) {
-		// TODO Auto-generated method stub
-		
+		jpaDao.save(entity);
 	}
 
 

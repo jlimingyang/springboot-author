@@ -103,9 +103,12 @@ public class JpaDaoImpl<T, PK extends Serializable> implements JpaDao {
 		List<T> list = null ;
         try {  
             Query query = em.createQuery(hql);  
-            for (int i = 0; i < args.length; i++) {  
-                query.setParameter(i + 1, args[i]);  
-            }  
+            if(args!=null){
+            	for (int i = 0; i < args.length; i++) {  
+                    query.setParameter(i + 1, args[i]);  
+                }  
+            }
+            
             list = query.getResultList();  
             if (logger.isDebugEnabled()) {  
                 logger.debug(list.size()+" hql查询:" +hql);  
@@ -181,8 +184,10 @@ public class JpaDaoImpl<T, PK extends Serializable> implements JpaDao {
 	@Override
 	public <T> List<T> findHql(String hql, Object... args) {
 		Query q = em.createQuery(hql);
-		for(int i=1;i<=args.length;i++){
-			q.setParameter(i, args[i]);
+		if(args!=null){
+			for(int i=1;i<=args.length;i++){
+				q.setParameter(i, args[i]);
+			}
 		}
 		return q.getResultList();
 	}
@@ -190,8 +195,10 @@ public class JpaDaoImpl<T, PK extends Serializable> implements JpaDao {
 	@Override
 	public <T> List<T> findHql(String hql, int index, int pageSize,Object... args) {
 		Query q = em.createQuery(hql);
-		for(int i=1;i<=args.length;i++){
-			q.setParameter(i, args[i]);
+		if(args!=null){
+			for(int i=1;i<=args.length;i++){
+				q.setParameter(i, args[i]);
+			}
 		}
 		q.setFirstResult(index);
 		q.setMaxResults(pageSize);

@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>个人信息</title>
-	<meta name="decorator" content="default"/>
+	<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
 </head>
 <body>
 	<form:form id="inputForm" modelAttribute="user" action="${ctx}/sys/user/infoEdit"  method="post" class="form-horizontal form-group">

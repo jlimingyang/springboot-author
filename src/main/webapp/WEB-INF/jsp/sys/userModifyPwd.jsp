@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>修改密码</title>
+	<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {

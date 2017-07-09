@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/include/taglib.jsp"%>
-<%@ include file="/include/dialog.jsp"%>
 <html>
 <head>
 	<title>用户管理</title>
+    <%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		var validateForm;

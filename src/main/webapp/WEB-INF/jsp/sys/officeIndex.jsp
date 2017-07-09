@@ -1,18 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/include/taglib.jsp"%>
+<%@ include file="/webpage/include/taglib.jsp"%>
 <html>
 <head>
-	<title>用户管理</title>
+	<title>机构管理</title>
 	<meta name="decorator" content="default"/>
-	<%@ include file="/include/header_bootstrap.jsp"%>
-	<%@include file="/include/header_other.jsp" %>
+	<%@include file="/webpage/include/treeview.jsp" %>
 	<style type="text/css">
 		.ztree {overflow:auto;margin:0;_margin-top:10px;padding:10px 0 0 10px;}
 	</style>
 	<script type="text/javascript">
 		function refresh(){//刷新
 			
-			window.location="${ctx}/sys/user/index";
+			window.location="${ctx}/sys/office/";
 		}
 	</script>
 </head>
@@ -23,23 +22,24 @@
 	<div class="ibox-content">
 	<sys:message content="${message}"/>
 	<div id="content" class="row">
-		<div id="left"  style="background-color:#e7eaec" class="leftBox col-sm-1">
+		<div id="left" style="background-color:#e7eaec" class="col-sm-1">
 			<a onclick="refresh()" class="pull-right">
 				<i class="fa fa-refresh"></i>
 			</a>
-			<div id="ztree" class="ztree leftBox-content"></div>
+			<div id="ztree" class="ztree"></div>
 		</div>
 		<div id="right"  class="col-sm-11  animated fadeInRight">
-			<iframe id="officeContent" name="officeContent" src="${ctx}/sys/user/list" width="100%" height="91%" frameborder="0"></iframe>
+			<iframe id="officeContent" name="officeContent" src="${ctx}/sys/office/list?id=&parentIds=" width="100%" height="91%" frameborder="0"></iframe>
 		</div>
+	</div>
 	</div>
 	</div>
 	</div>
 	<script type="text/javascript">
 		var setting = {data:{simpleData:{enable:true,idKey:"id",pIdKey:"pId",rootPId:'0'}},
 			callback:{onClick:function(event, treeId, treeNode){
-					var id = treeNode.id == '0' ? '' :treeNode.id;
-					$('#officeContent').attr("src","${ctx}/sys/user/list?office.id="+id+"&office.name="+treeNode.name);
+					var id = treeNode.pId == '0' ? '' :treeNode.pId;
+					$('#officeContent').attr("src","${ctx}/sys/office/list?id="+id+"&parentIds="+treeNode.pIds);
 				}
 			}
 		};

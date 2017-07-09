@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>个人信息</title>
+	
 	<meta name="decorator" content="default"/>
 	<link rel="stylesheet" type="text/css" href="${ctxStatic}/webuploader-0.1.5/webuploader.css">
 	<link rel="stylesheet" type="text/css" href="${ctxStatic}/webuploader-0.1.5/demo.css">
