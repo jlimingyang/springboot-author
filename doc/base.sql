@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.1.249_3306
-Source Server Version : 50712
-Source Host           : 192.168.1.249:3306
+Source Server         : localhost_3306
+Source Server Version : 50710
+Source Host           : localhost:3306
 Source Database       : base
 
 Target Server Type    : MYSQL
-Target Server Version : 50712
+Target Server Version : 50710
 File Encoding         : 65001
 
-Date: 2017-06-20 10:02:02
+Date: 2017-07-23 18:50:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -290,7 +290,7 @@ INSERT INTO `sys_dict` VALUES ('91', 'officeselect', '部门选择', 'gen_show_t
 INSERT INTO `sys_dict` VALUES ('92', 'areaselect', '区域选择', 'gen_show_type', '字段生成方案', '90', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '1', null);
 INSERT INTO `sys_dict` VALUES ('93', 'String', 'String', 'gen_java_type', 'Java类型', '10', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '1', null);
 INSERT INTO `sys_dict` VALUES ('94', 'Long', 'Long', 'gen_java_type', 'Java类型', '20', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '1', null);
-INSERT INTO `sys_dict` VALUES ('95', 'dao', '仅持久层', 'gen_category', '代码生成分类', '40', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '1', null);
+INSERT INTO `sys_dict` VALUES ('95', 'dao', '仅持久层', 'gen_category', '代码生成分类\0\0', '40', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '1', null);
 INSERT INTO `sys_dict` VALUES ('96', '1', '男', 'sex', '性别', '10', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '0', null);
 INSERT INTO `sys_dict` VALUES ('97', '2', '女', 'sex', '性别', '20', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '0', null);
 INSERT INTO `sys_dict` VALUES ('98', 'Integer', 'Integer', 'gen_java_type', 'Java类型', '30', null, '1', '2013-10-28 08:00:00', '1', '2013-10-28 08:00:00', null, '1', null);
@@ -327,6 +327,7 @@ CREATE TABLE `sys_resource` (
 -- ----------------------------
 -- Records of sys_resource
 -- ----------------------------
+INSERT INTO `sys_resource` VALUES ('0aa3712414d049a6a24e8bcddeae509a', '27', '0,1,27,', '我的日程', '100', '/iim/myCalendar', '', '', '1', '', '1', '2016-04-21 21:52:06', '1', '2016-04-21 21:52:06', '', '0');
 INSERT INTO `sys_resource` VALUES ('1', null, '', '功能菜单', '0', null, null, null, '1', null, '1', '2013-05-27 08:00:00', '1', '2013-05-27 08:00:00', null, '0');
 INSERT INTO `sys_resource` VALUES ('10', '3', '0,1,3,', '字典管理', '60', '/sys/dict/', '', 'th-list', '1', 'sys:dict:list', '1', '2013-05-27 08:00:00', '1', '2015-12-24 22:23:07', '', '0');
 INSERT INTO `sys_resource` VALUES ('11', '10', '0,1,3,10,', '查看', '30', '', '', '', '0', 'sys:dict:view', '1', '2013-05-27 08:00:00', '1', '2013-05-27 08:00:00', '', '0');
@@ -362,6 +363,7 @@ INSERT INTO `sys_resource` VALUES ('79f0ffa47dbe43ffa8824d97612d344f', '4', '0,1
 INSERT INTO `sys_resource` VALUES ('79fca849d3da4a82a4ade3f6b9f45126', '20', '0,1,3,20,', '删除', '100', '', '', '', '0', 'sys:user:del', '1', '2015-12-19 21:47:44', '1', '2015-12-19 21:48:52', '', '0');
 INSERT INTO `sys_resource` VALUES ('7fe0397a90214f49adc9bbbe48e5ab69', '1', '0,1,', '统计报表', '10', '', '', 'fa-line-chart', '1', '', '1', '2016-05-26 08:55:24', '1', '2016-05-31 08:57:05', '', '0');
 INSERT INTO `sys_resource` VALUES ('8', '7', '0,1,3,7,', '查看', '30', '', '', '', '0', 'sys:role:view', '1', '2013-05-27 08:00:00', '1', '2013-05-27 08:00:00', '', '0');
+INSERT INTO `sys_resource` VALUES ('843fdb78b8854bd48e503287f795a7d0', '27', '0,1,27,', '我的群组', '15120', '/iim/layGroup', '', '', '1', 'iim:layGroup:list', '1', '2016-08-07 21:15:11', '1', '2016-08-14 22:57:29', '', '0');
 INSERT INTO `sys_resource` VALUES ('8930e4aad1ba4a1c958d303968d8c442', '17', '0,1,3,17,', '删除', '100', '', '', '', '0', 'sys:office:del', '1', '2015-12-20 21:19:16', '1', '2015-12-20 21:19:16', '', '0');
 INSERT INTO `sys_resource` VALUES ('9', '7', '0,1,3,7,', '修改', '40', '', '', '', '0', 'sys:role:edit', '1', '2013-05-27 08:00:00', '1', '2013-05-27 08:00:00', '', '0');
 INSERT INTO `sys_resource` VALUES ('95a6a82dc5fc4d07b46e5df57a0606a3', '27', '0,1,27,', '信箱', '10000', '/iim/mailBox/list?orderBy=sendtime desc', '', '', '1', '', '1', '2015-11-14 11:14:30', '1', '2015-11-24 18:01:46', '', '0');
@@ -412,10 +414,12 @@ INSERT INTO `sys_role` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '部门管理
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role_resource`;
 CREATE TABLE `sys_role_resource` (
-  `role_id` varchar(32) NOT NULL,
-  `resource_id` varchar(32) NOT NULL,
-  PRIMARY KEY (`role_id`,`resource_id`),
+  `role_id` varchar(32) DEFAULT NULL,
+  `resource_id` varchar(32) DEFAULT NULL,
+  `id` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `FKkj7e3cva1e2s3nsd0yghpbsnk` (`resource_id`),
+  KEY `FK7urjh5xeujvp29nihwbs5b9kr` (`role_id`),
   CONSTRAINT `FK7urjh5xeujvp29nihwbs5b9kr` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`id`),
   CONSTRAINT `FKkj7e3cva1e2s3nsd0yghpbsnk` FOREIGN KEY (`resource_id`) REFERENCES `sys_resource` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -423,28 +427,28 @@ CREATE TABLE `sys_role_resource` (
 -- ----------------------------
 -- Records of sys_role_resource
 -- ----------------------------
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '1');
-INSERT INTO `sys_role_resource` VALUES ('5', '1');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '1');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '27');
-INSERT INTO `sys_role_resource` VALUES ('5', '27');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '27');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '3');
-INSERT INTO `sys_role_resource` VALUES ('5', '3');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '3');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '56e274e0ec1c41298e19ab46cf4e001f');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '56e274e0ec1c41298e19ab46cf4e001f');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '62');
-INSERT INTO `sys_role_resource` VALUES ('5', '62');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '62');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '67');
-INSERT INTO `sys_role_resource` VALUES ('5', '67');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '67');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '79');
-INSERT INTO `sys_role_resource` VALUES ('5', '79');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '79');
-INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '7fe0397a90214f49adc9bbbe48e5ab69');
-INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '7fe0397a90214f49adc9bbbe48e5ab69');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '1', '1');
+INSERT INTO `sys_role_resource` VALUES ('5', '27', '10');
+INSERT INTO `sys_role_resource` VALUES ('5', '3', '11');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '67', '111');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '79', '112');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '7fe0397a90214f49adc9bbbe48e5ab69', '113');
+INSERT INTO `sys_role_resource` VALUES ('5', '62', '12');
+INSERT INTO `sys_role_resource` VALUES ('5', '67', '13');
+INSERT INTO `sys_role_resource` VALUES ('5', '79', '14');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '1', '15');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '27', '16');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '3', '17');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '56e274e0ec1c41298e19ab46cf4e001f', '18');
+INSERT INTO `sys_role_resource` VALUES ('caacf61017114120bcf7bf1049b6d4c3', '62', '19');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '27', '2');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '3', '3');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '56e274e0ec1c41298e19ab46cf4e001f', '4');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '62', '5');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '67', '6');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '79', '7');
+INSERT INTO `sys_role_resource` VALUES ('1c54e003c1fc4dcd9b087ef8d48abac3', '7fe0397a90214f49adc9bbbe48e5ab69', '8');
+INSERT INTO `sys_role_resource` VALUES ('5', '1', '9');
 
 -- ----------------------------
 -- Table structure for `sys_user`
@@ -490,11 +494,11 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('0fb8ebbff20a46029596806aa077d3c2', '1', '5', 'fbb', '96e79218965eb72c92a549dd5a330112', '003', '范冰冰', '', '', '', '1', '/jeeplus/userfiles/0fb8ebbff20a46029596806aa077d3c2/images/u=1783243281,2583995645&fm=58.jpg', '0:0:0:0:0:0:0:1', '2016-08-14 18:11:18', '1', '1', '2016-02-24 23:25:41', '1', '2016-08-07 19:34:04', '', '0', '/jeeplus/userfiles/0fb8ebbff20a46029596806aa077d3c2/qrcode/0fb8ebbff20a46029596806aa077d3c2.png', null, null, null, null, null, null);
-INSERT INTO `sys_user` VALUES ('1', '1', '5', 'admin', '96e79218965eb72c92a549dd5a330112', '13815874603', 'admin', '', '', 'rr', '', '/jeeplus/userfiles/1/images/7e3e6709c93d70cf14e01629ffdcd100baa12bff.jpg', '0:0:0:0:0:0:0:1', '2017-05-29 08:57:07', '1', '1', '2013-05-27 08:00:00', '1', '2016-08-10 21:40:18', 'test', '0', '/jeeplus/userfiles/1/qrcode/test.png', '你好啊', null, null, null, null, null);
-INSERT INTO `sys_user` VALUES ('1e8149b33e774daa9a250f5a1a0ad23f', '1', '4', 'dzq', '96e79218965eb72c92a549dd5a330112', '006', '邓紫棋', '', '', '', '', '/jeeplus/userfiles/1e8149b33e774daa9a250f5a1a0ad23f/images/xin_03305061618075782724119.jpg', '0:0:0:0:0:0:0:1', '2016-07-24 20:17:34', '1', '1', '2016-02-24 23:27:47', '1e8149b33e774daa9a250f5a1a0ad23f', '2016-07-24 20:18:10', '', '0', '/jeeplus/userfiles/1e8149b33e774daa9a250f5a1a0ad23f/qrcode/1e8149b33e774daa9a250f5a1a0ad23f.png', null, null, null, null, null, null);
-INSERT INTO `sys_user` VALUES ('7374fe91d19a4b739ae649334c0cc273', '1', '5', 'lxr', '96e79218965eb72c92a549dd5a330112', '004', '林心如', '', '', '', '', '/jeeplus/userfiles/7374fe91d19a4b739ae649334c0cc273/images/xin_03305061618075782724119.jpg', '0:0:0:0:0:0:0:1', '2016-08-09 01:17:28', '1', '1', '2016-02-24 23:26:20', '7374fe91d19a4b739ae649334c0cc273', '2016-07-24 20:54:23', '', '0', '/jeeplus/userfiles/7374fe91d19a4b739ae649334c0cc273/qrcode/7374fe91d19a4b739ae649334c0cc273.png', null, null, null, null, null, null);
-INSERT INTO `sys_user` VALUES ('f7cc1c7e6f494818adffe1de5f2282fb', '1', '4', 'zw', '96e79218965eb72c92a549dd5a330112', '002', '赵薇', '', '', '', '', '/jeeplus/userfiles/f7cc1c7e6f494818adffe1de5f2282fb/images/7e3e6709c93d70cf14e01629ffdcd100baa12bff.jpg', '0:0:0:0:0:0:0:1', '2016-08-14 18:10:01', '1', '1', '2016-02-24 23:24:58', 'f7cc1c7e6f494818adffe1de5f2282fb', '2016-08-10 23:21:47', '', '0', '/jeeplus/userfiles/f7cc1c7e6f494818adffe1de5f2282fb/qrcode/f7cc1c7e6f494818adffe1de5f2282fb.png', '我是赵薇555', null, null, null, null, null);
+INSERT INTO `sys_user` VALUES ('0fb8ebbff20a46029596806aa077d3c2', '1', '5', 'fbb', '96e79218965eb72c92a549dd5a330112', '003', '范冰冰', '', '', '', '1', '/jeeplus/userfiles/0fb8ebbff20a46029596806aa077d3c2/images/u=1783243281,2583995645&fm=58.jpg', '0:0:0:0:0:0:0:1', '2016-08-14 18:11:18', '1', '1', '2016-02-24 23:25:41', '1', '2016-08-07 19:34:04', '', '0', '/jeeplus/userfiles/0fb8ebbff20a46029596806aa077d3c2/qrcode/0fb8ebbff20a46029596806aa077d3c2.png', null, null, null, null, null, 'CJ_ADMIN');
+INSERT INTO `sys_user` VALUES ('1', '1', '5', 'admin', '96e79218965eb72c92a549dd5a330112', '13815874603', 'admin', '', '', 'rr', '', '/jeeplus/userfiles/1/images/7e3e6709c93d70cf14e01629ffdcd100baa12bff.jpg', '0:0:0:0:0:0:0:1', '2017-05-29 08:57:07', '1', '1', '2013-05-27 08:00:00', '1', '2016-08-10 21:40:18', 'test', '0', '/jeeplus/userfiles/1/qrcode/test.png', '你好啊', null, null, null, null, 'CJ_ADMIN');
+INSERT INTO `sys_user` VALUES ('1e8149b33e774daa9a250f5a1a0ad23f', '1', '4', 'dzq', '96e79218965eb72c92a549dd5a330112', '006', '邓紫棋', '', '', '', '', '/jeeplus/userfiles/1e8149b33e774daa9a250f5a1a0ad23f/images/xin_03305061618075782724119.jpg', '0:0:0:0:0:0:0:1', '2016-07-24 20:17:34', '1', '1', '2016-02-24 23:27:47', '1e8149b33e774daa9a250f5a1a0ad23f', '2016-07-24 20:18:10', '', '0', '/jeeplus/userfiles/1e8149b33e774daa9a250f5a1a0ad23f/qrcode/1e8149b33e774daa9a250f5a1a0ad23f.png', null, null, null, null, null, 'CJ_ADMIN');
+INSERT INTO `sys_user` VALUES ('7374fe91d19a4b739ae649334c0cc273', '1', '5', 'lxr', '96e79218965eb72c92a549dd5a330112', '004', '林心如', '', '', '', '', '/jeeplus/userfiles/7374fe91d19a4b739ae649334c0cc273/images/xin_03305061618075782724119.jpg', '0:0:0:0:0:0:0:1', '2016-08-09 01:17:28', '1', '1', '2016-02-24 23:26:20', '7374fe91d19a4b739ae649334c0cc273', '2016-07-24 20:54:23', '', '0', '/jeeplus/userfiles/7374fe91d19a4b739ae649334c0cc273/qrcode/7374fe91d19a4b739ae649334c0cc273.png', null, null, null, null, null, 'CJ_ADMIN');
+INSERT INTO `sys_user` VALUES ('f7cc1c7e6f494818adffe1de5f2282fb', '1', '4', 'zw', '96e79218965eb72c92a549dd5a330112', '002', '赵薇', '', '', '', '', '/jeeplus/userfiles/f7cc1c7e6f494818adffe1de5f2282fb/images/7e3e6709c93d70cf14e01629ffdcd100baa12bff.jpg', '0:0:0:0:0:0:0:1', '2016-08-14 18:10:01', '1', '1', '2016-02-24 23:24:58', 'f7cc1c7e6f494818adffe1de5f2282fb', '2016-08-10 23:21:47', '', '0', '/jeeplus/userfiles/f7cc1c7e6f494818adffe1de5f2282fb/qrcode/f7cc1c7e6f494818adffe1de5f2282fb.png', '我是赵薇555', null, null, null, null, 'CJ_ADMIN');
 
 -- ----------------------------
 -- Table structure for `sys_user_role`
@@ -503,6 +507,13 @@ DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE `sys_user_role` (
   `user_id` varchar(32) NOT NULL,
   `role_id` varchar(32) NOT NULL,
+  `id` varchar(32) NOT NULL,
+  `create_by` varchar(255) DEFAULT NULL,
+  `create_date` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '创建日期',
+  `del_flag` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除标识0：未删，1：已删',
+  `remarks` varchar(255) DEFAULT NULL,
+  `update_by` varchar(255) DEFAULT NULL,
+  `update_date` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '更新日期',
   PRIMARY KEY (`user_id`,`role_id`),
   KEY `FKhh52n8vd4ny9ff4x9fb8v65qx` (`role_id`),
   CONSTRAINT `FKb40xxfch70f5qnyfw8yme1n1s` FOREIGN KEY (`user_id`) REFERENCES `sys_user` (`id`),
@@ -512,6 +523,6 @@ CREATE TABLE `sys_user_role` (
 -- ----------------------------
 -- Records of sys_user_role
 -- ----------------------------
-INSERT INTO `sys_user_role` VALUES ('1', '1c54e003c1fc4dcd9b087ef8d48abac3');
-INSERT INTO `sys_user_role` VALUES ('1', '781acb2361244e49aef509c8688c3ec2');
-INSERT INTO `sys_user_role` VALUES ('1', 'caacf61017114120bcf7bf1049b6d4c3');
+INSERT INTO `sys_user_role` VALUES ('1', '1c54e003c1fc4dcd9b087ef8d48abac3', '', null, '0000-00-00 00:00:00', '0', null, null, '0000-00-00 00:00:00');
+INSERT INTO `sys_user_role` VALUES ('1', '781acb2361244e49aef509c8688c3ec2', '', null, '0000-00-00 00:00:00', '0', null, null, '0000-00-00 00:00:00');
+INSERT INTO `sys_user_role` VALUES ('1', 'caacf61017114120bcf7bf1049b6d4c3', '', null, '0000-00-00 00:00:00', '0', null, null, '0000-00-00 00:00:00');
