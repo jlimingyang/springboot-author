@@ -4,7 +4,7 @@
 <head>
 	<title>分配角色</title>
 	<meta name="decorator" content="blank"/>
-	<%@include file="/include/treeview.jsp" %>
+	<%@include file="/include/header_treeview.jsp" %>
 	<script type="text/javascript">
 	
 		var officeTree;

@@ -3,8 +3,11 @@
 <html>
 <head>
 	<title>角色管理</title>
-	<meta name="decorator" content="default"/>
-	<%@include file="/include/treeview.jsp" %>
+	<!-- 全局js -->
+    <script src="${pageContext.request.contextPath}/static/js/jquery/jquery-2.1.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/jquery/jquery-migrate-1.1.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/plugins/jquery-validation/1.14.0/jquery.validate.min.js"></script>
+	<%@include file="/include/header_treeview.jsp" %>
 	<script type="text/javascript">
 
 	  	var validateForm;
@@ -49,7 +52,8 @@
 			
 			// 用户-菜单
 			var zNodes=[
-					<c:forEach items="${menuList}" var="menu">{id:"${menu.id}", pId:"${not empty menu.parent.id?menu.parent.id:0}", name:"${not empty menu.parent.id?menu.name:'权限列表'}"},
+					<c:forEach items="${menuList}" var="menu">
+					   {id:"${menu.id}", pId:"${not empty menu.parent.id?menu.parent.id:0}", name:"${not empty menu.parent.id?menu.name:'权限列表'}"},
 		            </c:forEach>];
 			// 初始化树结构
 			var tree = $.fn.zTree.init($("#menuTree"), setting, zNodes);
@@ -69,22 +73,10 @@
 	</script>
 </head>
 <body>
-	<form:form id="inputForm" modelAttribute="role" action="${ctx}/sys/role/save" method="post" class="form-horizontal">
+	<form:form id="inputForm" modelAttribute="role" action="${ctx}/sys/role/grant" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
-		<input  name="office.id" type="hidden" value="${role.office.id}">
-		<input  name="office.name" type="hidden" value="${role.office.name}">
-		<input  name="name" type="hidden" value="${role.name}">
-		<input  name="oldName" type="hidden" value="${role.name}">
-		<input  name="roleCode" type="hidden" value="${role.roleCode}">
-		<input  name="oldRoleCode" type="hidden" value="${role.roleCode}">
-		<input  name="roleType" type="hidden" value="${role.roleType}">
-		<input  name="sysData" type="hidden" value="${role.sysData}">
-		<input  name="useable" type="hidden" value="${role.useable}">
-		<input  name="dataScope" type="hidden" value="${role.dataScope}">
-		<input  name="remarks" type="hidden" value="${role.remarks}">
 		<div id="menuTree" class="ztree" style="margin-top:3px;float:left;"></div>
-					<form:hidden path="menuIds"/>
-		<form:hidden path="deptIds"/>
+		<form:hidden path="menuIds"/>
 	</form:form>
 </body>
 </html>
