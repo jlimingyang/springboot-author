@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
  */
-package com.lostad.app.common.page;
+package com.lostad.app.common.vo;
 
 import java.util.ArrayList;
 import java.util.List;

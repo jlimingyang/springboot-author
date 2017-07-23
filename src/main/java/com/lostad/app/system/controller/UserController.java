@@ -4,6 +4,7 @@
 package com.lostad.app.system.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,10 +28,10 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.jeeplus.common.utils.StringUtils;
 import com.lostad.app.common.controller.BaseController;
-import com.lostad.app.common.page.Page;
 import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.util.Validator;
 import com.lostad.app.common.vo.AjaxJson;
+import com.lostad.app.common.vo.Page;
 import com.lostad.app.security.util.MD5Utils;
 import com.lostad.app.system.dao.UserDao;
 import com.lostad.app.system.entity.User;
@@ -71,7 +72,7 @@ public class UserController extends BaseController {
 	public String list(Page pageInfo,User user, HttpServletRequest request, HttpServletResponse response, Model model) {
 		try {
 			String sql = " select * from sys_user ";
-			pageInfo = commonService.datagridsql(sql, pageInfo, user, null);
+			pageInfo = commonService.datagridsql(sql, pageInfo, user, new ArrayList());
 			model.addAttribute("page", pageInfo);
 		} catch (Exception e) {
 			e.printStackTrace();

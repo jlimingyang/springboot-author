@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.lostad.app.common.dao.JpaDao;
-import com.lostad.app.common.page.Page;
+import com.lostad.app.common.vo.Page;
 /**
  * 这个类是基于 jpa 和 jdbc 实现
  * @author songsz

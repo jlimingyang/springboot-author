@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lostad.app.common.dao.JdbcDao;
 import com.lostad.app.common.dao.JpaDao;
 import com.lostad.app.common.dao.impl.JpaDaoImpl;
-import com.lostad.app.common.page.Page;
 import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.util.SqlParamUtil;
+import com.lostad.app.common.vo.Page;
 import com.lostad.app.common.vo.SortDirection;
 
 /**

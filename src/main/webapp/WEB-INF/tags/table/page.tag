@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ include file="/include/taglib.jsp"%>
-<%@ attribute name="page" type="com.lostad.app.common.page.Page" required="true"%>
+<%@ attribute name="page" type="com.lostad.app.common.vo.Page" required="true"%>
 <%-- 表格分页工具栏，使用方法： 原样输出page --%>
 ${page}
 <!-- pagination的css样式设定-->

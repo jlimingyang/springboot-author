@@ -53,6 +53,8 @@ public class MyRealm extends AuthorizingRealm {
 		Set<String> roleSet = userService.findMyRoles();
 		authorizationInfo.setRoles(roleSet);
 		authorizationInfo.setStringPermissions(shiroPermissions);
+		// 添加用户权限
+		authorizationInfo.addStringPermission("user");
 		return authorizationInfo;
 	}
 
