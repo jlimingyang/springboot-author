@@ -19,7 +19,7 @@ import com.lostad.app.system.dao.UserDao;
 import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.entity.Role;
 import com.lostad.app.system.entity.User;
-import com.lostad.app.system.service.IRoleService;
+import com.lostad.app.system.service.RoleService;
 import com.lostad.app.system.service.ResourceService;
 import com.lostad.app.system.util.UserUtils;
 
@@ -40,14 +40,14 @@ public class ResourceServiceImpl extends BaseServiceImpl<Menu, String>
 	@Autowired
 	private UserDao userDao;
 	@Autowired
-	private IRoleService roleService;
+	private RoleService roleService;
 
 	@Override
 	@Cacheable(value = "resourceCache", key = "'tree' + #roleId")
 	public List<ZtreeView> tree(String roleId) {
 		List<ZtreeView> resulTreeNodes = new ArrayList<ZtreeView>();
 		Role role = roleService.find(roleId);
-		Set<Menu> roleResources = role.getResources();
+		List<Menu> roleResources = roleService.listResources(roleId);
 		resulTreeNodes.add(new ZtreeView(0L, null, "系统菜单", true));
 		ZtreeView node;
 		Sort sort = new Sort(Direction.ASC, "parent", "id", "sort");
@@ -105,7 +105,7 @@ public class ResourceServiceImpl extends BaseServiceImpl<Menu, String>
 		User currUser = UserUtils.getCurrUser();
 		List<Menu> list = null ;
 		//超级管理员
-		if(currUser.getRoleCodes().contains("CJ_ADMIN")){
+		if(currUser.getRoleCodes().contains("administrator")){
 			list = resourceDao.findAllMenu();
 		}else{
 			list = resourceDao.findAllMenu();

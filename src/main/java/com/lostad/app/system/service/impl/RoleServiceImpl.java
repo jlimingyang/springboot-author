@@ -1,9 +1,7 @@
 package com.lostad.app.system.service.impl;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +9,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import com.lostad.app.common.dao.IBaseSpringDataDao;
+import com.lostad.app.common.dao.JdbcDao;
+import com.lostad.app.common.dao.JpaDao;
+import com.lostad.app.common.exception.ServiceException;
 import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.service.impl.BaseServiceImpl;
 import com.lostad.app.common.util.HqlUtil;
 import com.lostad.app.system.dao.RoleDao;
 import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.entity.Role;
+import com.lostad.app.system.entity.RoleResource;
+import com.lostad.app.system.service.RoleService;
 import com.lostad.app.system.service.ResourceService;
-import com.lostad.app.system.service.IRoleService;
 
 /**
  * <p>
@@ -29,7 +31,7 @@ import com.lostad.app.system.service.IRoleService;
  * @since 2016-12-28
  */
 @Service
-public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IRoleService {
+public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements RoleService {
 
 	@Autowired
 	private RoleDao roleDao;
@@ -37,7 +39,11 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IR
 	private ResourceService resourceService;
 	@Autowired
 	private CommonService commonService;
-
+	@Autowired
+	private JpaDao jpaDao;
+	@Autowired
+	private JdbcDao jdbcDao;
+	
 	@Override
 	public void saveOrUpdate(Role role) {
 		if(role.getId() != null){
@@ -60,25 +66,29 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IR
 	}
 
 	@Override
-	public void grant(String id, String[] resourceIds) {
-		Role role = find(id);
+	public void grant(String roleId, String[] resourceIds) {
+		Role role = find(roleId);
 		Assert.notNull(role, "角色不存在");
-		
 		Assert.state(!"administrator".equals(role.getRoleCode()),"超级管理员角色不能进行资源分配");
-		Menu resource;
-		Set<Menu> resources = new HashSet<Menu>();
-		if(resourceIds != null){
-			for (int i = 0; i < resourceIds.length; i++) {
-				if(StringUtils.isBlank(resourceIds[i]) || "0".equals(resourceIds[i])){
-					continue;
+		if(resourceIds != null&& resourceIds.length>0){
+			try{
+				jdbcDao.excuteSql(" delete from sys_role_resource where role_id=? ", roleId);
+				List<RoleResource> entitys = new ArrayList<>();
+				for (int i = 0; i < resourceIds.length; i++) {
+					String mId = resourceIds[i];
+					if(StringUtils.isBlank(resourceIds[i]) || "0".equals(resourceIds[i])){
+						continue;
+					}
+					Menu m = jpaDao.find(Menu.class,mId);
+					entitys.add(new RoleResource(m, role));
 				}
-				String rid = resourceIds[i];
-				resource = resourceService.find(rid);
-				resources.add(resource);
+				jpaDao.batchSave(entitys);
+			}catch(Exception e){
+				e.printStackTrace();
+				throw new ServiceException("保存失败！");
 			}
+			
 		}
-		role.setResources(resources);
-		update(role);
 	}
 
 
@@ -88,8 +98,6 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IR
 		return roleDao;
 	}
 
-
-
 	@Override
 	public List<Role> findRoles(Role param) {
 		 StringBuilder hql = new StringBuilder();
@@ -98,6 +106,14 @@ public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements IR
 		 HqlUtil.genWhereCondition(hql, params, param);
 		 List<Role> list = commonService.findHql(hql.toString(), params.toArray());
 		return list;
+	}
+
+
+
+	@Override
+	public List<Menu> listResources(String roleId) {
+		String hql = " select menu from RoleResource rr where rr.role.id=?";
+		return jpaDao.findHql(hql, roleId);
 	}
 	
 }

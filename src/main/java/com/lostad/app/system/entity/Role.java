@@ -28,29 +28,12 @@ public class Role extends BaseEntity{
 	@Column(columnDefinition="char(32) COMMENT ' 是否系统角色1是0否'")
 	private String isSys;
 
-	@ManyToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY)
-	@JoinTable(name = "sys_role_resource", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = { @JoinColumn(name = "resource_id") })
-	@JsonIgnore
-	private java.util.Set<Menu> resources;
 	
 	// Constructors
 	/** default constructor */
 	public Role() {
 	}
 	
-	
-
-	public java.util.Set<Menu> getResources() {
-		return resources;
-	}
-
-
-
-	public void setResources(java.util.Set<Menu> resources) {
-		this.resources = resources;
-	}
-
-
 
 	public String getName() {
 		return name;

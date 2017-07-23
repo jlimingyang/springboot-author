@@ -5,6 +5,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 
+import com.lostad.app.system.entity.Menu;
+
 import java.io.Serializable;
 import java.util.List;
 /**
@@ -48,4 +50,5 @@ public interface IBaseService<T, ID extends Serializable> {
     public abstract void delete(T entity);
 
     public List<T> findList(Specification<T> spec, Sort sort);
+
 }

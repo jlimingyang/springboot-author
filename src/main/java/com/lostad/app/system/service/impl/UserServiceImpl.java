@@ -16,10 +16,11 @@ import com.lostad.app.common.service.CacheService;
 import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.service.impl.BaseServiceImpl;
 import com.lostad.app.system.dao.UserDao;
+import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.entity.Role;
 import com.lostad.app.system.entity.User;
 import com.lostad.app.system.entity.UserRole;
-import com.lostad.app.system.service.IRoleService;
+import com.lostad.app.system.service.RoleService;
 import com.lostad.app.system.service.UserService;
 import com.lostad.app.system.util.UserUtils;
 
@@ -42,7 +43,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements
 	@Autowired
 	private JdbcDao jdbcDao;
 	@Autowired
-	private IRoleService roleService;
+	private RoleService roleService;
 	@Autowired
 	private CacheService cacheService;
 	@Autowired

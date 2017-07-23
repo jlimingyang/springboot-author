@@ -293,7 +293,7 @@ public class UserUtils {
 	 */
 	public static boolean isCurrUserAdmin() {
 		User u = getCurrUser();
-		if(u.getRoleCodes().contains("SUPER_ADMIN")){
+		if(u.getRoleCodes().contains("Administrator")){
 			return true;
 		}
 		return false;

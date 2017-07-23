@@ -185,8 +185,8 @@ public class JpaDaoImpl<T, PK extends Serializable> implements JpaDao {
 	public <T> List<T> findHql(String hql, Object... args) {
 		Query q = em.createQuery(hql);
 		if(args!=null){
-			for(int i=1;i<=args.length;i++){
-				q.setParameter(i, args[i]);
+			for(int i=0;i<args.length;i++){
+				q.setParameter(i+1, args[i]);
 			}
 		}
 		return q.getResultList();
@@ -196,8 +196,8 @@ public class JpaDaoImpl<T, PK extends Serializable> implements JpaDao {
 	public <T> List<T> findHql(String hql, int index, int pageSize,Object... args) {
 		Query q = em.createQuery(hql);
 		if(args!=null){
-			for(int i=1;i<=args.length;i++){
-				q.setParameter(i, args[i]);
+			for(int i=0;i<args.length;i++){
+				q.setParameter(i+1, args[i]);
 			}
 		}
 		q.setFirstResult(index);

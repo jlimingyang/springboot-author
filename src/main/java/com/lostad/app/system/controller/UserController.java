@@ -34,7 +34,7 @@ import com.lostad.app.common.vo.AjaxJson;
 import com.lostad.app.security.util.MD5Utils;
 import com.lostad.app.system.dao.UserDao;
 import com.lostad.app.system.entity.User;
-import com.lostad.app.system.service.IRoleService;
+import com.lostad.app.system.service.RoleService;
 import com.lostad.app.system.service.UserService;
 import com.lostad.app.system.util.UserUtils;
 
@@ -48,7 +48,7 @@ public class UserController extends BaseController {
 	@Autowired
 	private UserDao userDao;
 	@Autowired
-	private IRoleService roleService;
+	private RoleService roleService;
 	@Autowired
 	private UserService userService;
 	@ModelAttribute

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -18,20 +17,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.jeeplus.common.utils.StringUtils;
 import com.lostad.app.common.controller.BaseController;
-import com.lostad.app.common.page.Page;
 import com.lostad.app.common.service.CacheService;
-import com.lostad.app.common.service.CommonService;
 import com.lostad.app.common.util.Collections3;
 import com.lostad.app.common.util.Validator;
-import com.lostad.app.system.dao.UserDao;
-import com.lostad.app.system.entity.Office;
+import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.entity.Role;
 import com.lostad.app.system.entity.User;
-import com.lostad.app.system.service.IRoleService;
+import com.lostad.app.system.service.RoleService;
 import com.lostad.app.system.service.ResourceService;
 import com.lostad.app.system.service.UserService;
 import com.lostad.app.system.util.UserUtils;
@@ -46,7 +41,7 @@ import com.lostad.app.system.util.UserUtils;
 public class RoleController extends BaseController {
 
 	@Autowired
-	private IRoleService roleService;
+	private RoleService roleService;
 	@Autowired
 	private ResourceService resourceService;
 	@Autowired
@@ -81,9 +76,17 @@ public class RoleController extends BaseController {
 	
 	@RequiresPermissions("sys:role:auth")
 	@RequestMapping(value = "/auth")
-	public String auth(Role role, Model model) {
+	public String auth(RoleVO role, Model model) {
 		model.addAttribute("role", role);
-		model.addAttribute("menuList",resourceService.findAll());
+		List menuList = resourceService.findAll();
+		model.addAttribute("menuList",menuList);
+		List<Menu> list = roleService.listResources(role.getId());
+		StringBuilder sb = new StringBuilder();
+		for(Menu m:list){
+			sb.append(m.getId()).append(",");
+		}
+		role.setMenuIds(sb.toString());
+		
 		return "sys/roleAuth";
 	}
 	
@@ -104,6 +107,19 @@ public class RoleController extends BaseController {
 			return list(role, model);
 		}
 	
+	}
+	
+	@RequiresPermissions(value={"sys:role:assign","sys:role:auth","sys:role:add","sys:role:edit"},logical=Logical.OR)
+	@RequestMapping(value = "/grant")
+	public String grant(@RequestParam("id") String roleId,@RequestParam String menuIds,Model model, RedirectAttributes redirectAttributes) {
+		try{
+			roleService.grant(roleId,menuIds.split(","));
+			addMessage(redirectAttributes, "保存成功");
+			return "redirect:" + "/sys/role/?repage";
+		}catch(Exception e){
+			addMessage(model, "保存失败, 数据不合法");
+			return list(new Role(), model);
+		}
 	}
 	
 	@RequiresPermissions("sys:role:del")
