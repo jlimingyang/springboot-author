@@ -11,3 +11,6 @@
 <%@ taglib prefix="t" uri="/menu-tags"%>
 <!-- 自定义 -->
 <%@ taglib prefix="table" tagdir="/WEB-INF/tags/table" %>
+ <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+ <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>  
+ 
