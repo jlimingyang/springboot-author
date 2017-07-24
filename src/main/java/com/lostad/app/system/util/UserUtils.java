@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.system.util;
 
@@ -28,7 +28,7 @@ import com.lostad.app.system.service.ResourceService;
 
 /**
  * 用户工具类
- * @author jeeplus
+ * @author lostad
  * @version 2013-12-05
  */
 public class UserUtils {

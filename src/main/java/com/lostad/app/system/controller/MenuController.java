@@ -19,8 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.jeeplus.common.utils.StringUtils;
 import com.lostad.app.common.controller.BaseController;
+import com.lostad.app.common.util.StringUtils;
 import com.lostad.app.system.entity.Menu;
 import com.lostad.app.system.service.ResourceService;
 import com.lostad.app.system.util.UserUtils;

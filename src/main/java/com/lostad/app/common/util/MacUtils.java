@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.common.util;
 
@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 /**
  * MAC地址工具
  * 
- * @author jeeplus
+ * @author lostad
  * @version 2013-12-21
  */
 public class MacUtils {

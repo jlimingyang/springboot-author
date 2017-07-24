@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2005-2012 springside.org.cn
  */
-package com.jeeplus.common.utils;
+package com.lostad.app.common.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

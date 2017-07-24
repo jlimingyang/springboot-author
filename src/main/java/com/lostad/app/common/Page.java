@@ -14,7 +14,7 @@ import com.lostad.app.common.util.CookieUtils;
 
 /**
  * 分页类
- * @author jeeplus
+ * @author lostad
  * @version 2013-7-2
  * @param <T>
  */

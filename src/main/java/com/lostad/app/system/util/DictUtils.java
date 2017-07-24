@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.system.util;
 
@@ -19,7 +19,7 @@ import com.lostad.app.system.entity.Dict;
 
 /**
  * 字典工具类 (后期加缓存注解)
- * @author jeeplus
+ * @author lostad
  * @version 2013-5-29
  */
 public class DictUtils {

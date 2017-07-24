@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.system.controller;
 
@@ -26,9 +26,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.jeeplus.common.utils.StringUtils;
 import com.lostad.app.common.controller.BaseController;
 import com.lostad.app.common.service.CommonService;
+import com.lostad.app.common.util.StringUtils;
 import com.lostad.app.common.util.Validator;
 import com.lostad.app.common.vo.AjaxJson;
 import com.lostad.app.common.vo.Page;

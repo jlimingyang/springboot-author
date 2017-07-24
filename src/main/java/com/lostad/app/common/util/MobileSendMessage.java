@@ -1,4 +1,4 @@
-package com.jeeplus.common.utils;
+package com.lostad.app.common.util;
 
 //import java.util.List;
 //
@@ -10,8 +10,8 @@ package com.jeeplus.common.utils;
 //import com.baidu.yun.channel.model.PushUnicastMessageRequest;
 //import com.baidu.yun.core.log.YunLogEvent;
 //import com.baidu.yun.core.log.YunLogHandler;
-//import com.jeeplus.modules.sys.entity.User;
-//import com.jeeplus.modules.sys.utils.UserUtils;
+//import com.lostad.modules.sys.entity.User;
+//import com.lostad.modules.sys.utils.UserUtils;
 
 public class MobileSendMessage {
 	

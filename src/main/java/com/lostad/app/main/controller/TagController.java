@@ -11,7 +11,7 @@ import com.lostad.app.common.controller.BaseController;
 
 /**
  * 标签Controller
- * @author jeeplus
+ * @author lostad
  * @version 2013-3-23
  */
 @Controller

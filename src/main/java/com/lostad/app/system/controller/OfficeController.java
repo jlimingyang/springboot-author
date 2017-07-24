@@ -21,9 +21,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.jeeplus.common.utils.StringUtils;
 import com.lostad.app.common.controller.BaseController;
 import com.lostad.app.common.service.CommonService;
+import com.lostad.app.common.util.StringUtils;
 import com.lostad.app.common.util.Validator;
 import com.lostad.app.system.entity.Office;
 import com.lostad.app.system.entity.User;
@@ -33,7 +33,7 @@ import com.lostad.app.system.util.UserUtils;
 
 /**
  * 机构Controller
- * @author jeeplus
+ * @author lostad
  * @version 2013-5-15
  */
 @Controller

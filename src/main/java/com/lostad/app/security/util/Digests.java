@@ -11,7 +11,7 @@ import java.security.SecureRandom;
 
 import org.apache.commons.lang3.Validate;
 
-import com.jeeplus.common.utils.Exceptions;
+import com.lostad.app.common.util.Exceptions;
 
 /**
  * 支持SHA-1/MD5消息摘要的工具类.

@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.conf.intercepter;
 
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 日志拦截器
- * @author jeeplus
+ * @author lostad
  * @version 2014-8-19
  */
 public class LogInterceptor implements HandlerInterceptor {

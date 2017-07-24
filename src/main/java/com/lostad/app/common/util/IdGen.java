@@ -1,7 +1,7 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
-package com.jeeplus.common.utils;
+package com.lostad.app.common.util;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 封装各种生成唯一性ID算法的工具类.
- * @author jeeplus
+ * @author lostad
  * @version 2013-01-15
  */
 @Service

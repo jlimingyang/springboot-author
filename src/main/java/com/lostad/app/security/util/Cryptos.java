@@ -15,8 +15,8 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.jeeplus.common.utils.Encodes;
-import com.jeeplus.common.utils.Exceptions;
+import com.lostad.app.common.util.Encodes;
+import com.lostad.app.common.util.Exceptions;
 
 /**
  * 支持HMAC-SHA1消息签名 及 DES/AES对称加密的工具类.

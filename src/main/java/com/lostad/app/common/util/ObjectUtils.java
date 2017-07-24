@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.common.util;
 
@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 对象操作工具类, 继承org.apache.commons.lang3.ObjectUtils类
- * @author jeeplus
+ * @author lostad
  * @version 2014-6-29
  */
 public class ObjectUtils extends org.apache.commons.lang3.ObjectUtils {

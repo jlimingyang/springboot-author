@@ -1,7 +1,7 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
-package com.jeeplus.common.utils;
+package com.lostad.app.common.util;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.lostad.app.common.util.SpringUtil;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -22,7 +21,7 @@ import redis.clients.jedis.exceptions.JedisException;
 /**
  * Jedis Cache 工具类
  * 
- * @author jeeplus
+ * @author lostad
  * @version 2014-6-29
  */
 public class JedisUtils {

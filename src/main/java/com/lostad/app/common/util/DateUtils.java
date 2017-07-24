@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.common.util;
 
@@ -10,7 +10,7 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 
 /**
  * 日期工具类, 继承org.apache.commons.lang.time.DateUtils类
- * @author jeeplus
+ * @author lostad
  * @version 2014-4-15
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {

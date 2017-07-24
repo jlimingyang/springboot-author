@@ -1,11 +1,11 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.common.exception;
 
 /**
  * Service层公用的Exception, 从由Spring管理事务的函数中抛出时会触发事务回滚.
- * @author jeeplus
+ * @author lostad
  */
 public class ServiceException extends RuntimeException {
 

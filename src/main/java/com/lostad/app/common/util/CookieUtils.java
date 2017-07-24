@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.common.util;
 
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Cookie工具类
- * @author jeeplus
+ * @author lostad
  * @version 2013-01-15
  */
 public class CookieUtils {

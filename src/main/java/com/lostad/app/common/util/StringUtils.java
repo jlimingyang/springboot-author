@@ -1,7 +1,7 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
-package com.jeeplus.common.utils;
+package com.lostad.app.common.util;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
@@ -17,11 +17,10 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.LocaleResolver;
 
 import com.google.common.collect.Lists;
-import com.lostad.app.common.util.SpringUtil;
 
 /**
  * 字符串工具类, 继承org.apache.commons.lang3.StringUtils类
- * @author jeeplus
+ * @author lostad
  * @version 2013-05-22
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {

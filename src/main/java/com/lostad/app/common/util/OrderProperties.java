@@ -1,4 +1,4 @@
-package com.jeeplus.common.utils;
+package com.lostad.app.common.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

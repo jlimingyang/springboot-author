@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2020 <a href="http://www.lostad.org/">JeePlus</a> All rights reserved.
  */
 package com.lostad.app.common.dao;
 
@@ -8,12 +8,12 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.jeeplus.common.utils.Reflections;
-import com.jeeplus.common.utils.StringUtils;
+import com.lostad.app.common.util.Reflections;
+import com.lostad.app.common.util.StringUtils;
 
 /**
  * 数据Entity类
- * @author jeeplus
+ * @author lostad
  * @version 2014-05-16
  */
 public abstract class TreeEntity<T>{
