@@ -25,9 +25,4 @@
 	<script src="${pageContext.request.contextPath}/static/common/lostad.js?v=1.0"></script>
 
     <script src="${pageContext.request.contextPath}/static/js/plugins/pace/pace.min.js"></script>
-    <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-    <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>  
-    
-</body>
-
-</html>
+   
