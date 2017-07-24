@@ -16,8 +16,8 @@ if (Servlets.isAjaxRequest(request)) {
 //输出异常信息页面
 else {
 %>
-<%@page import="com.jeeplus.common.utils.Exceptions"%>
-<%@page import="com.jeeplus.common.utils.StringUtils"%>
+<%@page import="com.lostad.app.common.util.Exceptions"%>
+<%@page import="com.lostad.app.common.util.StringUtils"%>
 <%@page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@include file="/include/taglib.jsp"%>
 <!DOCTYPE html>

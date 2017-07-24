@@ -21,8 +21,8 @@
      <!-- 日期 -->
     <script src="${pageContext.request.contextPath}/static/js/plugins/layer/laydate/laydate.js"></script>
      <!-- 通用 -->
-	<link href="${pageContext.request.contextPath}/static/common/jeeplus.css?v=1.0" rel="stylesheet">
-	<script src="${pageContext.request.contextPath}/static/common/jeeplus.js?v=1.0"></script>
+	<link href="${pageContext.request.contextPath}/static/common/lostad.css?v=1.0" rel="stylesheet">
+	<script src="${pageContext.request.contextPath}/static/common/lostad.js?v=1.0"></script>
 
     <script src="${pageContext.request.contextPath}/static/js/plugins/pace/pace.min.js"></script>
     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
