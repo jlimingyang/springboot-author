@@ -48,7 +48,7 @@ public class MyRealm extends AuthorizingRealm {
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		User user = (User) principals.getPrimaryPrincipal();
 		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-		User dbUser = userService.findByUserName(user.getUsername());
+		//User dbUser = userService.findByUserName(user.getUsername());
 		Set<String> shiroPermissions = userService.findMyPermitions();
 		Set<String> roleSet = userService.findMyRoles();
 		authorizationInfo.setRoles(roleSet);
