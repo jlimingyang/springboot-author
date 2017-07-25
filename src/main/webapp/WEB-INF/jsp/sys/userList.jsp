@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>用户管理</title>
-	<<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_bootstrap.jsp"%>
 	<%@include file="/include/header_other.jsp" %>
 	<%@include file="/include/header_table_grid.jsp" %>
 </head>
@@ -19,15 +19,15 @@
 		<table:sortColumn id="orderBy" name="orderBy" value="${page.orderBy}" callback="sortOrRefresh();"/><!-- 支持排序 -->
 		<div class="form-group">
 			<span>归属公司：</span>
-				<sys:treeselect id="company" name="company.id" value="${user.company.id}" labelName="company.name" labelValue="${user.company.name}" 
+				<sys:treeselect id="company" name="company.id" value="${user.deptId}" labelName="company.name" labelValue="${user.deptId}" 
 				title="公司" url="/sys/office/treeData?type=1" cssClass=" form-control input-sm" allowClear="true"/>
 			<span>登录名：</span>
-				<form:input path="loginName" htmlEscape="false" maxlength="50" class=" form-control input-sm"/>
+				<form:input path="username" htmlEscape="false" maxlength="50" class=" form-control input-sm"/>
 			<span>归属部门：</span>
-				<sys:treeselect id="office" name="office.id" value="${user.office.id}" labelName="office.name" labelValue="${user.office.name}" 
+				<sys:treeselect id="office" name="office.id" value="${user.deptId}" labelName="office.name" labelValue="${user.deptId}" 
 				title="部门" url="/sys/office/treeData?type=2" cssClass=" form-control input-sm" allowClear="true" notAllowSelectParent="true"/>
 			<span>姓&nbsp;&nbsp;&nbsp;名：</span>
-				<form:input path="name" htmlEscape="false" maxlength="50" class=" form-control input-sm"/>
+				<form:input path="realName" htmlEscape="false" maxlength="50" class=" form-control input-sm"/>
 		
 		 </div>	
 	</form:form>
@@ -68,9 +68,9 @@
 		<thead>
 			<tr>
 				<th><input type="checkbox" class="i-checks"></th>
-				<th class="sort-column login_name">登录名</th>
+				<th class="sort-column username">登录名</th>
 				<th class="sort-column name">姓名</th>
-				<th class="sort-column phone">电话</th>
+				<th class="sort-column phone">EMAIL</th>
 				<th class="sort-column mobile">手机</th>
 				<th class="sort-column c.name">归属公司</th>
 				<th class="sort-column o.name">归属部门</th>
@@ -81,12 +81,12 @@
 		<c:forEach items="${page.list}" var="user">
 			<tr>
 				<td> <input type="checkbox" id="${user.id}" class="i-checks"></td>
-				<td><a  href="#" onclick="openDialogView('查看用户', '${ctx}/sys/user/form?id=${user.id}','800px', '680px')">${user.loginName}</a></td>
-				<td>${user.name}</td>
-				<td>${user.phone}</td>
+				<td><a  href="#" onclick="openDialogView('查看用户', '${ctx}/sys/user/form?id=${user.id}','800px', '680px')">${user.username}</a></td>
+				<td>${user.realName}</td>
+				<td>${user.email}</td>
 				<td>${user.mobile}</td>
-				<td>${user.company.name}</td>
-				<td>${user.office.name}</td>
+				<td></td>
+				<td></td>
 				<td>
 					<shiro:hasPermission name="sys:user:view">
 						<a href="#" onclick="openDialogView('查看用户', '${ctx}/sys/user/form?id=${user.id}','800px', '680px')" class="btn btn-info btn-xs" ><i class="fa fa-search-plus"></i> 查看</a>

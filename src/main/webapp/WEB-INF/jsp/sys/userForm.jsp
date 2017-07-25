@@ -5,7 +5,6 @@
 	<title>用户管理</title>
     <%@ include file="/include/header_bootstrap.jsp"%>
 	<%@include file="/include/header_other.jsp" %>
-	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		var validateForm;
 		function doSubmit(){//回调函数，在编辑和保存动作时，供openDialog调用提交表单。
@@ -20,10 +19,10 @@
 			$("#no").focus();
 			validateForm = $("#inputForm").validate({
 				rules: {
-					loginName: {remote: "${ctx}/sys/user/checkLoginName?oldLoginName=" + encodeURIComponent('${user.loginName}')}//设置了远程验证，在初始化时必须预先调用一次。
+					username: {remote: "${ctx}/sys/user/checkLoginName?oldLoginName=" + encodeURIComponent('${user.username}')}//设置了远程验证，在初始化时必须预先调用一次。
 				},
 				messages: {
-					loginName: {remote: "用户登录名已存在"},
+					username: {remote: "用户登录名已存在"},
 					confirmNewPassword: {equalTo: "输入与上面相同的密码"}
 				},
 				submitHandler: function(form){
@@ -61,13 +60,13 @@
 		         <td class="width-35"><form:hidden id="nameImage" path="photo" htmlEscape="false" maxlength="255" class="input-xlarge"/>
 						<sys:ckfinder input="nameImage" type="images" uploadPath="/photo" selectMultiple="false" maxWidth="100" maxHeight="100"/></td>
 		         <td  class="width-15"  class="active">	<label class="pull-right"><font color="red">*</font>归属公司:</label></td>
-		         <td class="width-35"><sys:treeselect id="company" name="company.id" value="${user.company.id}" labelName="company.name" labelValue="${user.company.name}"
+		         <td class="width-35"><sys:treeselect id="company" name="company.id" value="${user.deptId}" labelName="company.name" labelValue="${user.deptId}"
 						title="公司" url="/sys/office/treeData?type=1" cssClass="form-control required"/></td>
 		      </tr>
 		      
 		      <tr>
 		         <td class="active"><label class="pull-right"><font color="red">*</font>归属部门:</label></td>
-		         <td><sys:treeselect id="office" name="office.id" value="${user.office.id}" labelName="office.name" labelValue="${user.office.name}"
+		         <td><sys:treeselect id="office" name="office.id" value="${user.deptId}" labelName="office.name" labelValue="${user.deptId}"
 					title="部门" url="/sys/office/treeData?type=2" cssClass="form-control required" notAllowSelectParent="true"/></td>
 		         <td class="active"><label class="pull-right"><font color="red">*</font>工号:</label></td>
 		         <td><form:input path="no" htmlEscape="false" maxlength="50" class="form-control required"/></td>
@@ -75,10 +74,10 @@
 		      
 		      <tr>
 		         <td class="active"><label class="pull-right"><font color="red">*</font>姓名:</label></td>
-		         <td><form:input path="name" htmlEscape="false" maxlength="50" class="form-control required"/></td>
+		         <td><form:input path="realName" htmlEscape="false" maxlength="50" class="form-control required"/></td>
 		         <td class="active"><label class="pull-right"><font color="red">*</font>登录名:</label></td>
-		         <td><input id="oldLoginName" name="oldLoginName" type="hidden" value="${user.loginName}">
-					 <form:input path="loginName" htmlEscape="false" maxlength="50" class="form-control required userName"/></td>
+		         <td><input id="oldLoginName" name="oldLoginName" type="hidden" value="${user.username}">
+					 <form:input path="username" htmlEscape="false" maxlength="50" class="form-control required userName"/></td>
 		      </tr>
 		      
 		      
@@ -108,13 +107,9 @@
 		      
 		      <tr>
 		         <td class="active"><label class="pull-right">用户类型:</label></td>
-		         <td><form:select path="userType"  class="form-control">
-					<form:option value="" label="请选择"/>
-						<form:options items="${fns:getDictList('sys_user_type')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
-					</form:select></td>
+		         <td></td>
 		         <td class="active"><label class="pull-right"><font color="red">*</font>用户角色:</label></td>
 		         <td>
-		         	<form:checkboxes path="roleIdList" items="${allRoles}" itemLabel="name" itemValue="id" htmlEscape="false" cssClass="i-checks required"/>
 		         	<label id="roleIdList-error" class="error" for="roleIdList"></label>
 		         </td>
 		      </tr>
