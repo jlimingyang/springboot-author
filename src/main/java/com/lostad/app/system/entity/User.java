@@ -37,7 +37,52 @@ public class User extends BaseEntity {
 	@JoinTable(name = "sys_user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
 	@JsonIgnore
 	private java.util.Set<Role> roles;
+	private String no;//工号
+	private String phone;//电话
+	private String loginFlag;//登录标识
 	// Constructors
+
+	public String getLoginFlag() {
+		return loginFlag;
+	}
+
+
+
+
+	public void setLoginFlag(String loginFlag) {
+		this.loginFlag = loginFlag;
+	}
+
+
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
+
+
+	public String getNo() {
+		return no;
+	}
+
+
+
+
+	public void setNo(String no) {
+		this.no = no;
+	}
+
+
+
 
 	/** default constructor */
 	public User() {
