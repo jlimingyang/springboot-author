@@ -60,10 +60,10 @@ public class AreaController extends com.lostad.app.common.controller.BaseControl
 	@RequestMapping(value = "form")
 	public String form(Area area, Model model) {
 		if (Validator.isNotEmpty(area.getParentId())){
-			area = commonService.find(Area.class,area.getParentId());
+			//area = commonService.find(Area.class,area.getParentId());
 		}
 		model.addAttribute("area", area);
-		return "modules/sys/areaForm";
+		return "sys/areaForm";
 	}
 	
 	@RequiresPermissions(value={"sys:area:add","sys:area:edit"},logical=Logical.OR)
