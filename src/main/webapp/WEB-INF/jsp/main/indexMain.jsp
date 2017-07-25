@@ -311,7 +311,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a1.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a4.jpg">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -329,7 +329,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a2.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a4.jpg">
                                     </div>
                                     <div class="media-body">
                                         HCY48之音乐大魔王会员专属皮肤已上线，快来一键换装拥有他，宣告你对华晨宇的爱吧！
@@ -341,7 +341,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a4.jpg">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -372,7 +372,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a8.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a4.jpg">
                                     </div>
                                     <div class="media-body">
 
@@ -397,7 +397,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="/static/img/a4.jpg">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
