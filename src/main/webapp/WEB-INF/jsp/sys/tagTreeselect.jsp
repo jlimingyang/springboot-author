@@ -4,7 +4,7 @@
 <head>
 	<title>数据选择</title>
 	<meta name="decorator" content="blank"/>
-	<%@ include file="/include/jquery_bootstrap.jsp"%>
+	<%@ include file="/include/header_bootstrap.jsp"%>
 	<%@include file="/include/header_treeview.jsp" %>
 	<script type="text/javascript">
 		var key, lastValue = "", nodeList = [], type = getQueryString("type", "${url}");

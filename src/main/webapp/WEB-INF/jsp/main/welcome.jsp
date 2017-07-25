@@ -396,8 +396,6 @@
     <script src="${ctx}/static/js/plugins/flot/curvedLines.js"></script>
 
     <!-- Peity -->
-    <script src="${ctx}/static/js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="${ctx}/static/js/demo/peity-demo.js"></script>
 
     <!-- 自定义js -->
     <script src="${ctx}/static/js/content.js?v=1.0.0"></script>

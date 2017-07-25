@@ -2,7 +2,7 @@
 <%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
-<%@ include file="/include/jquery_bootstrap.jsp"%>
+<%@ include file="/include/header_bootstrap.jsp"%>
     <title>图标选择</title>
 	<meta name="decorator" content="blank"/>
     <style type="text/css">
