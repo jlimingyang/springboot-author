@@ -232,7 +232,7 @@
   <function>
     <description>对象转换JSON字符串</description>
     <name>toJson</name>
-    <function-class>com.jeeplus.common.mapper.JsonMapper</function-class>
+    <function-class>com.lostad.app.common.util.JsonMapper</function-class>
     <function-signature>java.lang.String toJsonString(java.lang.Object)</function-signature>
     <example>${fns:toJson(object)}</example>  
   </function>
