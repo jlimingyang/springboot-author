@@ -50,5 +50,11 @@
 		+"m,  <b>最大可用内存: "+((Runtime.getRuntime().maxMemory()-Runtime.getRuntime().totalMemory()
 				+Runtime.getRuntime().freeMemory())/1024/1024)+"m" %>
 	</font>	
+	
+	<br>
+	<br>
+	<br>
+	<b>
+	<a href="/swagger-ui.html#"> 接口文档 </a>
 </body>
 </html>
