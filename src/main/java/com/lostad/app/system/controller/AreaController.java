@@ -53,7 +53,7 @@ public class AreaController extends com.lostad.app.common.controller.BaseControl
 	@RequestMapping(value = {"list", ""})
 	public String list(Area area, Model model) {
 		model.addAttribute("list", commonService.findHql(" from Area ", null ));
-		return "modules/sys/areaList";
+		return "sys/areaList";
 	}
 
 	@RequiresPermissions(value={"sys:area:view","sys:area:add","sys:area:edit"},logical=Logical.OR)
