@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>区域管理</title>
-	<meta name="decorator" content="default"/>
+	<%@include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
 	<script type="text/javascript">
 		var validateForm;
 		function doSubmit(){//回调函数，在编辑和保存动作时，供openDialog调用提交表单。
@@ -42,8 +43,10 @@
 		   <tbody>
 		      <tr>
 		         <td  class="width-15 active"><label class="pull-right">上级区域:</label></td>
-		         <td class="width-35" ><sys:treeselect id="area" name="parent.id" value="${area.parent.id}" labelName="parent.name" labelValue="${area.parent.name}"
-					title="区域" url="/sys/area/treeData" extId="${area.id}" cssClass="form-control m-s" allowClear="true"/></td>
+		         <td class="width-35" >
+		         	<sys:treeselect id="area" name="parentId" value="${area.parentId}" labelName="parentId" labelValue="${area.parentId}"
+					title="区域" url="/sys/area/treeData" extId="${area.id}" cssClass="form-control m-s" allowClear="true"/>
+				 </td>
 		         <td  class="width-15 active"><label class="pull-right">区域名称:</label></td>
 		         <td  class="width-35" ><form:input path="name" htmlEscape="false" maxlength="50" class="form-control required"/></td>
 		      </tr>

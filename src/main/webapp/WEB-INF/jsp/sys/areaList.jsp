@@ -7,6 +7,8 @@
 	<%@include file="/include/header_other.jsp" %>
 	<%@include file="/include/header_treetable.jsp" %>
 	<%@include file="/include/header_table_grid.jsp" %>
+	<!-- 引入自定义文件 -->
+	<script src="${ctxStatic}/common/mustache.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var tpl = $("#treeTableTpl").html().replace(/(\/\/\<!\-\-)|(\/\/\-\->)/g,"");
