@@ -47,11 +47,11 @@
                 <form method="post" action="${ctx}/login">
                     <h4 class="no-margins">登录：</h4>
                     <p class="m-t-md">${message}</p>
-                    <input name="username" type="text" class="form-control uname" placeholder="用户名" />
-                    <input name="password" type="password" class="form-control pword m-b" placeholder="密码" />
+                    <input name="username" type="text" class="form-control uname" placeholder="用户名" autocomplete="off"/>
+                    <input name="password" type="password" class="form-control pword m-b" placeholder="密码" autocomplete="off"/>
                     <li>
 	                   <img src="${ctx}/vercode" height="20px" width="60px" onclick="random(this)"/>
-	                   <input name="randomcode" type="text" class="form-control m-b" placeholder="请输入上方的验证码" />
+	                   <input name="randomcode" type="text" class="form-control m-b" style="color:#333" placeholder="请输入上方的验证码" />
                     </li>
                     <button class="btn btn-success btn-block">登录</button>
                 </form>
