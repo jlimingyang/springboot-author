@@ -6,6 +6,7 @@
 	<meta name="decorator" content="default"/>
 	<%@ include file="/include/header_bootstrap.jsp"%>
 	<%@include file="/include/header_other.jsp" %>
+	<%@include file="/include/header_treeview.jsp" %>
 	<style type="text/css">
 		.ztree {overflow:auto;margin:0;_margin-top:10px;padding:10px 0 0 10px;}
 	</style>

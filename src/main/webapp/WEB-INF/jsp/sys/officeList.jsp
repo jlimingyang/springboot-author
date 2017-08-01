@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>机构管理</title>
-	<meta name="decorator" content="default"/>
-	<%@include file="/webpage/include/treetable.jsp" %>
+	<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
+	<%@include file="/include/header_table_grid.jsp" %>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var tpl = $("#treeTableTpl").html().replace(/(\/\/\<!\-\-)|(\/\/\-\->)/g,"");

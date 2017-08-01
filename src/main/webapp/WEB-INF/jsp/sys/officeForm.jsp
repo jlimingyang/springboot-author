@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp"%>
 <html>
 <head>
 	<title>机构管理</title>
-	<meta name="decorator" content="default"/>
+	<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
 	<script type="text/javascript">
 		var validateForm;
 		function doSubmit(){//回调函数，在编辑和保存动作时，供openDialog调用提交表单。

@@ -1,10 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ include file="/webpage/include/taglib.jsp"%>
+<%@ include file="/include/taglib.jsp" %>
 <html>
 <head>
 	<title>机构管理</title>
-	<meta name="decorator" content="default"/>
-	<%@include file="/webpage/include/header_treeview.jsp" %>
+	<%@ include file="/include/header_bootstrap.jsp"%>
+	<%@include file="/include/header_other.jsp" %>
+	<%@include file="/include/header_treetable.jsp" %>
+	<%@include file="/include/header_treeview.jsp" %>
+	<%@include file="/include/header_table_grid.jsp" %>
+	<!-- 引入自定义文件 -->
+	<script src="${ctxStatic}/common/mustache.min.js" type="text/javascript"></script>
 	<style type="text/css">
 		.ztree {overflow:auto;margin:0;_margin-top:10px;padding:10px 0 0 10px;}
 	</style>
